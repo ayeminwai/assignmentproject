@@ -1,0 +1,69 @@
+CREATE DATABASE bluestone;
+GO
+USE bluestone;
+
+GO
+CREATE TABLE user(
+	id BIGINT NOT NULL AUTO_INCREMENT,
+	code VARCHAR(20) NOT NULL DEFAULT(""),
+	name VARCHAR(50) NOT NULL DEFAULT(""),
+	password VARCHAR(50) NOT NULL DEFAULT(""),
+	email VARCHAR(50) NOT NULL DEFAULT(""),
+	address VARCHAR(255) NOT NULL DEFAULT(""),
+	phone VARCHAR(15) NOT NULL DEFAULT(""),
+	PRIMARY KEY (id,email)
+)ENGINE = InnoDB;
+GO
+
+CREATE TABLE step (
+	 id BIGINT NOT NULL AUTO_INCREMENT,
+	 name VARCHAR(50) NOT NULL DEFAULT(""),
+	 position int NOT NULL DEFAULT(0),
+	 watch int NOT NULL DEFAULT(0),
+	 user_id BIGINT NOT NULL DEFAULT(0),
+	 PRIMARY KEY(id)
+)ENGINE = InnoDB;
+GO
+
+create table task(
+	id bigint NOT NULL AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL DEFAULT(""),
+	date_time VARCHAR(20) NOT NULL DEFAULT(""),
+	step_id bigint NOT NULL,
+	PRIMARY KEY(id)
+)ENGINE=InnoDB;
+GO 
+------------------------------------------------------------------------------------------------------------------
+truncate table task;
+truncate table step;
+truncate table user;
+------------------------------------------------------------------------------------------------------------------
+insert into user(code,name,password,email,address,phone) values("0001","User1","Og5kkhWAf0aU98BRrWptaQ==","ayeminwai1@gmail.com","Pathein","+959972784660");
+insert into user(code,name,password,email,address,phone) values("0002","User2","Og5kkhWAf0aU98BRrWptaQ==","ayeminwai2@gmail.com","Pathein","+959972784661");
+insert into user(code,name,password,email,address,phone) values("0003","User3","Og5kkhWAf0aU98BRrWptaQ==","ayeminwai3@gmail.com","Pathein","+959972784662");
+insert into user(code,name,password,email,address,phone) values("0004","User4","Og5kkhWAf0aU98BRrWptaQ==","ayeminwai4@gmail.com","Pathein","+959972784663");
+insert into user(code,name,password,email,address,phone) values("0005","User5","Og5kkhWAf0aU98BRrWptaQ==","ayeminwai5@gmail.com","Pathein","+959972784664");
+insert into step(name,position,watch,user_id) values("Step1",1,0,"1");
+insert into step(name,position,watch,user_id) values("Step2",2,0,"1");
+insert into step(name,position,watch,user_id) values("Step3",3,0,"1");
+insert into step(name,position,watch,user_id) values("Step4",4,0,"1");
+insert into step(name,position,watch,user_id) values("Step1",1,0,"2");
+insert into step(name,position,watch,user_id) values("Step2",2,0,"2");
+insert into step(name,position,watch,user_id) values("Step3",3,0,"2");
+insert into step(name,position,watch,user_id) values("Step4",4,0,"2");
+insert into step(name,position,watch,user_id) values("Step1",1,0,"3");
+insert into step(name,position,watch,user_id) values("Step2",2,0,"3");
+insert into step(name,position,watch,user_id) values("Step3",3,0,"3");
+insert into step(name,position,watch,user_id) values("Step4",4,0,"3");
+insert into task(name,date_time,step_id) values("Task1","20190317205450",1);
+insert into task(name,date_time,step_id) values("Task2","20190317205450",1);
+insert into task(name,date_time,step_id) values("Task3","20190317205450",1);
+insert into task(name,date_time,step_id) values("Task4","20190317205450",1);
+insert into task(name,date_time,step_id) values("Task1","20190317205450",5);
+insert into task(name,date_time,step_id) values("Task2","20190317205450",5);
+insert into task(name,date_time,step_id) values("Task3","20190317205450",5);
+insert into task(name,date_time,step_id) values("Task4","20190317205450",6);
+insert into task(name,date_time,step_id) values("Task1","20190317205450",9);
+insert into task(name,date_time,step_id) values("Task2","20190317205450",9);
+insert into task(name,date_time,step_id) values("Task3","20190317205450",11);
+insert into task(name,date_time,step_id) values("Task4","20190317205450",9);
