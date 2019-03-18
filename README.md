@@ -22,3 +22,10 @@ Todolist API
     dump request/response to log file as json format
     configuration file for database connection
     use Maven/Gradle
+    
+    
+  Reference link
+  -- https://start.spring.io/
+  -- https://howtodoinjava.com/log4j2/log4j-2-json-configuration-example/
+  -- https://mariadb.org/
+  -- https://spring.io/guides
